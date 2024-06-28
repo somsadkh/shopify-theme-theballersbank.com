@@ -177,7 +177,9 @@
           -%}
           <a href="{{ routes.cart_url }}" class="cart-link" data-hash="{{ cart_hash }}">
             <span class="cart-link__label {% if section.settings.icon_strategy == 'icons_only' %}visually-hidden{% else %}visually-hidden-mobile{% endif %}">
-              {{- 'sections.header.cart' | t | escape -}}
+              
+              <!-- {{- 'sections.header.cart' | t | escape -}} -->
+              Basket
             </span>
             <span class="cart-link__icon">
               {%- liquid

@@ -1,1 +1,49 @@
-{"type":"header","name":"Header Group","sections":{"header":{"type":"header","blocks":{"menu_promotion_small_xi3Fkx":{"type":"menu-promotion-small","disabled":true,"settings":{"dropdown_link_title":"","title":"","link_url":""}}},"block_order":["menu_promotion_small_xi3Fkx"],"settings":{"logo":"shopify:\/\/shop_images\/Ballers_bank_logo_white_91916a36-476b-405f-a8f8-a342b79a4be0.png","logo_img_width_int":80,"mobile_logo_img_width_int":45,"logo_h1":true,"enable_sticky":true,"enable_transparent":false,"transparent_color":"#ffffff","transparent_logo":"shopify:\/\/shop_images\/Ballers_bank_logo_white_91916a36-476b-405f-a8f8-a342b79a4be0.png","menu_linklist":"navigation-new-june-2024-test","menu_layout":"inline-menu-left","nav_featured_link":"","menu_linklist_mobile":"navigation-new-june-2024-test","mobile_expand_with_entire_link":true,"enable_mobile_promo_carousel":true,"enable_nav_mob_products":false,"nav_mob_products_title":"Best Sellers","nav_mob_products_collection":"","enable_search":true,"search_recommendations_title":"","search_recommendations_menu":"","icon_strategy":"icons_only","cart_icon":"cart"}}},"order":["header"]}
+{
+  "type": "header",
+  "name": "Header Group",
+  "sections": {
+    "header": {
+      "type": "header",
+      "blocks": {
+        "menu_promotion_small_xi3Fkx": {
+          "type": "menu-promotion-small",
+          "disabled": true,
+          "settings": {
+            "dropdown_link_title": "",
+            "title": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "menu_promotion_small_xi3Fkx"
+      ],
+      "settings": {
+        "logo": "shopify:\/\/shop_images\/Ballers_bank_logo_white_91916a36.png",
+        "logo_img_width_int": 80,
+        "mobile_logo_img_width_int": 45,
+        "logo_h1": true,
+        "enable_sticky": true,
+        "enable_transparent": false,
+        "transparent_color": "#ffffff",
+        "menu_linklist": "main-menu",
+        "menu_layout": "inline-menu-center",
+        "nav_featured_link": "",
+        "menu_linklist_mobile": "main-menu",
+        "mobile_expand_with_entire_link": true,
+        "enable_mobile_promo_carousel": true,
+        "enable_nav_mob_products": false,
+        "nav_mob_products_title": "Best Sellers",
+        "nav_mob_products_collection": "",
+        "enable_search": false,
+        "search_recommendations_title": "",
+        "search_recommendations_menu": "",
+        "icon_strategy": "icons_cart_search",
+        "cart_icon": "basket"
+      }
+    }
+  },
+  "order": [
+    "header"
+  ]
+}

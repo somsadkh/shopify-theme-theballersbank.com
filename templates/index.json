@@ -1,1 +1,225 @@
-{"sections":{"scrolling_banner_4j97yP":{"type":"scrolling-banner","blocks":{"text_gydhaM":{"type":"text","settings":{"text":"#1 SELLER ON TIKTOK","color":"#171717","link":"","use_h1":false,"stencil_all_text":false,"stencil_text":""}},"text_T7ecx6":{"type":"text","settings":{"text":"STREAMING MONDAY-SATURDAY","color":"#df5641","link":"","use_h1":false,"stencil_all_text":false,"stencil_text":""}}},"block_order":["text_gydhaM","text_T7ecx6"],"settings":{"full_width":true,"color_scheme":"default","text_size":22,"vertical_padding":0,"speed":28.5,"direction":"left","font":"base","space":25}},"16359276425da8ce46":{"type":"slideshow","blocks":{"16359276425da8ce46-1":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Artboard_2_78018e1e-b431-4ad7-a1e9-6db73943e92e.png","mobile_image":"shopify:\/\/shop_images\/Artboard_6_209c0df4-4d66-4232-8eac-42d2be0a7077.png","slide_link":"","subheading":"","title":"","heading_max_width":15,"title_size":84,"title_size_mobile":46,"use_h1":false,"text":"","enlarge_text":false,"button_label_1":"Tiktok","button_url_1":"https:\/\/www.tiktok.com\/@theballersbank?lang=en","button_label_2":"Instagram","button_url_2":"https:\/\/www.instagram.com\/theballersbank\/","text_alignment":"bottom left"}},"16359276425da8ce46-0":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Artboard_1_b0828a5a-3875-4999-96f1-0ed0f8517a40.png","mobile_image":"shopify:\/\/shop_images\/Artboard_4_254ed2ab-87e0-4f46-927a-ed507c05d7a1.png","slide_link":"","subheading":"","title":"","heading_max_width":12,"title_size":90,"title_size_mobile":46,"use_h1":false,"text":"","enlarge_text":true,"button_label_1":"SHOP NFL BREAKS","button_url_1":"","button_label_2":"","button_url_2":"","text_alignment":"bottom right"}}},"block_order":["16359276425da8ce46-1","16359276425da8ce46-0"],"settings":{"height":"fixed","height_desktop":600,"height_mobile":460,"full_width":true,"mobile_overlay_under":false,"overlay_style":"full image-overlay--bg-shadow","transition":"fade","navigation":"dots","autoplay":true,"autoplay_speed":7,"accessibility_info":""}},"logo_list_tGy8YR":{"type":"logo-list","blocks":{"logo_TB7JC6":{"type":"logo","settings":{"image":"shopify:\/\/shop_images\/Artboard_17.png","image_width":120,"link":"","title":""}},"logo_Nn7jWk":{"type":"logo","settings":{"image":"shopify:\/\/shop_images\/Artboard_18.png","image_width":120,"link":"","title":""}}},"block_order":["logo_TB7JC6","logo_Nn7jWk"],"settings":{"title":"SHOP OUR FAVORITE BRANDS","image_opacity":75,"color_scheme":"default"}},"key_features_3W8Xe3":{"type":"key-features","blocks":{"feature_7Etnip":{"type":"feature","settings":{"image":"shopify:\/\/shop_images\/twophone_mockup_42707467-b22b-4654-b0c9-746da952f48d.png","bg_color":"#ffffff","bg_gradient":"linear-gradient(320deg, rgba(56, 78, 197, 1) 16%, rgba(203, 68, 194, 1) 52%, rgba(255, 201, 104, 1) 87%)","text_color":"#000000","heading":"BREAK","text":"<h2><\/h2><p>Group breaks enable participants to collectively share a box or case of cards. Claim your stake and uncover the cards destined for your selected team, spot, or division!<\/p>","show_segments":true,"segments":4,"active_segment":"4","fill_segments":true,"show_labels":true,"label_left":"","label_middle":"","label_right":"","show_icon":false,"icon":"star"}},"feature_ritjUP":{"type":"feature","settings":{"image":"shopify:\/\/shop_images\/HeroDesktop.webp","bg_color":"#e3e3e3","bg_gradient":"linear-gradient(180deg, rgba(196, 102, 238, 1), rgba(82, 218, 236, 1) 100%)","text_color":"#505050","heading":"GRADE","text":"<p>Introducing our Grade to Consign Option: Partnering with [Grading Company], The Ballers Bank provides a reliable and streamlined method for consigning your cards.<\/p>","show_segments":true,"segments":5,"active_segment":"4","fill_segments":true,"show_labels":true,"label_left":"","label_middle":"","label_right":"","show_icon":false,"icon":"star"}},"feature_wBqgxE":{"type":"feature","settings":{"bg_color":"#c3c3c3","bg_gradient":"linear-gradient(310deg, rgba(29, 132, 176, 1) 24%, rgba(172, 188, 224, 1) 86%)","text_color":"#f7f7f8","heading":"CONSIGN","text":"<p>Expertly Consign Your Authenticated and Graded Slabs with Ballers Bank<\/p>","show_segments":false,"segments":5,"active_segment":"2","fill_segments":true,"show_labels":true,"label_left":"","label_middle":"","label_right":"","show_icon":false,"icon":"star"}}},"block_order":["feature_7Etnip","feature_ritjUP","feature_wBqgxE"],"settings":{"heading":"","image_max_width":630,"media_aspect_ratio":"1","image_position":"right","segment_position":"under-text"}},"rich_text_mRYgLT":{"type":"rich-text","blocks":{"heading_DVYReq":{"type":"heading","settings":{"title":"OUR MOTTO","use_h1":false}},"image_eLdgFH":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/BB_Website-05.png","image_width":260,"url":""}},"image_FmGCrC":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Artboard_11.png","image_width":260,"url":""}},"image_p3fgNh":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Artboard_12.png","image_width":260,"url":""}}},"block_order":["heading_DVYReq","image_eLdgFH","image_FmGCrC","image_p3fgNh"],"disabled":true,"settings":{"height":"small","text_alignment":"center","full_width":true,"color_scheme":"default"}},"16359278676808bea5":{"type":"featured-collection","settings":{"title":"SHOP BY CATEGORY","collection":"","show_vendor":false,"enable_carousel":true,"grid":3,"rows":1,"color_scheme":"default","show_view_all":true,"full_width":true}},"background_video_yyY6Jn":{"type":"background-video","settings":{"video_shopify":"shopify:\/\/files\/videos\/STREAMING MONDAY-FRIDAY.mp4","video_external":"https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc","video_description":"","text_alignment":"center center","height_desktop":600,"height_mobile":300,"full_width":true,"overlay_style":"shadow"}},"16359281184fd0d618":{"type":"testimonials","blocks":{"16359281184fd0d618-0":{"type":"testimonial","settings":{"star_rating":5,"testimonial":"Add customer reviews and testimonials to showcase your store’s happy customers.","author":"Author's name","image_caption":"","link":""}},"16359281184fd0d618-1":{"type":"testimonial","settings":{"star_rating":5,"testimonial":"Add customer reviews and testimonials to showcase your store’s happy customers.","author":"Author's name","image_caption":"","link":""}}},"block_order":["16359281184fd0d618-0","16359281184fd0d618-1"],"disabled":true,"settings":{"title":"From the people","layout":"image-right","text_caps":false,"quote_text_size":30,"quote_text_size_mobile":20,"image_shape":"square","color_scheme":"default","autoplay":true,"autoplay_speed":5}},"163592857728b8bdc2":{"type":"multi-column","blocks":{"163592857728b8bdc2-0":{"type":"text_block","settings":{"enable_media":true,"title":"TRADING CARDS","text":"<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>","button_label":"Shop all tcg","link":""}},"163592857728b8bdc2-1":{"type":"text_block","settings":{"enable_media":true,"title":"SLABS","text":"<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>","button_label":"SHOP SLAB HOUSE","link":""}},"163592857728b8bdc2-2":{"type":"text_block","settings":{"enable_media":true,"title":"BREAKS","text":"<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>","button_label":"SHOP ALL BREAKS","link":""}}},"block_order":["163592857728b8bdc2-0","163592857728b8bdc2-1","163592857728b8bdc2-2"],"disabled":true,"settings":{"title":"Multi-column","media_aspect_ratio":"s","media_width":700,"text_alignment":"center","button_style":"primary","color_scheme":"default"}},"image_with_text_LAHdgU":{"type":"image-with-text","blocks":{"heading_tjbLYA":{"type":"heading","settings":{"title":"BALLERS BANK TCG","use_h1":false}},"text_zUrDyt":{"type":"text","settings":{"text":"<p>Pair text with an image to give customers insight into your brand. Tell a story, explain a product detail, or describe a new promotion.<\/p>","enlarge_text":false}},"button_DEkcK9":{"type":"button","settings":{"button_label":"SHOP TCG","button_link":"","button_style":"primary"}}},"block_order":["heading_tjbLYA","text_zUrDyt","button_DEkcK9"],"disabled":true,"settings":{"image_width":700,"image_link":"","image_position":"left","text_alignment":"left","color_scheme":"default"}},"163592870141219e2f":{"type":"featured-blog","disabled":true,"settings":{"title":"Blog posts","blog":"","post_limit":3,"show_author":true,"show_date":true,"show_excerpts":true,"crop_ratio":"1.78","color_scheme":"default"}}},"order":["scrolling_banner_4j97yP","16359276425da8ce46","logo_list_tGy8YR","key_features_3W8Xe3","rich_text_mRYgLT","16359278676808bea5","background_video_yyY6Jn","16359281184fd0d618","163592857728b8bdc2","image_with_text_LAHdgU","163592870141219e2f"]}
+{
+  "sections": {
+    "slideshow_7mCnjh": {
+      "type": "slideshow",
+      "blocks": {
+        "image_FH384T": {
+          "type": "image",
+          "settings": {
+            "slide_link": "",
+            "subheading": "",
+            "title": "Live Stream Products<br>Buy Now",
+            "heading_max_width": 15,
+            "title_size": 60,
+            "title_size_mobile": 38,
+            "use_h1": false,
+            "text": "",
+            "enlarge_text": true,
+            "button_label_1": "Browse Our Shop",
+            "button_url_1": "shopify:\/\/collections\/all",
+            "button_label_2": "",
+            "button_url_2": "",
+            "text_alignment": "center center"
+          }
+        },
+        "image_w4nYUd": {
+          "type": "image",
+          "settings": {
+            "slide_link": "",
+            "subheading": "",
+            "title": "Live Stream Products<br>Buy Now",
+            "heading_max_width": 15,
+            "title_size": 60,
+            "title_size_mobile": 38,
+            "use_h1": false,
+            "text": "",
+            "enlarge_text": true,
+            "button_label_1": "Browse Our Shop",
+            "button_url_1": "shopify:\/\/collections\/all",
+            "button_label_2": "",
+            "button_url_2": "",
+            "text_alignment": "center center"
+          }
+        }
+      },
+      "block_order": [
+        "image_FH384T",
+        "image_w4nYUd"
+      ],
+      "custom_css": [
+        "h2 {text-transform: initial; font-weight: 700;}"
+      ],
+      "settings": {
+        "height": "adapt",
+        "height_desktop": 600,
+        "height_mobile": 460,
+        "full_width": true,
+        "mobile_overlay_under": false,
+        "overlay_style": "shadow",
+        "transition": "fade",
+        "navigation": "arrows",
+        "autoplay": true,
+        "autoplay_speed": 7,
+        "accessibility_info": ""
+      }
+    },
+    "scrolling_banner_RiFyx8": {
+      "type": "scrolling-banner",
+      "blocks": {
+        "text_WYMhiQ": {
+          "type": "text",
+          "settings": {
+            "text": "Streaming Monday-Saturday",
+            "color": "rgba(0,0,0,0)",
+            "link": "",
+            "use_h1": false,
+            "stencil_all_text": false,
+            "stencil_text": ""
+          }
+        },
+        "text_carkqL": {
+          "type": "text",
+          "settings": {
+            "text": "Seller on TikTok",
+            "color": "rgba(0,0,0,0)",
+            "link": "",
+            "use_h1": false,
+            "stencil_all_text": false,
+            "stencil_text": "TikTok"
+          }
+        }
+      },
+      "block_order": [
+        "text_WYMhiQ",
+        "text_carkqL"
+      ],
+      "custom_css": [
+        "{background-color: #000;}",
+        "span.marquee-item.marquee-text {color: #fff;}"
+      ],
+      "settings": {
+        "full_width": true,
+        "color_scheme": "default",
+        "text_size": 26,
+        "vertical_padding": 10,
+        "speed": 25,
+        "direction": "left",
+        "font": "heading",
+        "space": 50
+      }
+    },
+    "custom_section_2_aMtAni": {
+      "type": "custom-section-2",
+      "blocks": {
+        "image_block_37J9AL": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/featured-1.jpg",
+            "title": "Building Community",
+            "btn-link": "shopify:\/\/collections\/all"
+          }
+        },
+        "image_block_L8yawA": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/featured-1.jpg",
+            "title": "#1 Tiktok Shop!",
+            "btn-link": "shopify:\/\/collections\/all"
+          }
+        },
+        "image_block_hAXEfP": {
+          "type": "image_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/featured-1.jpg",
+            "title": "+50 orders",
+            "btn-link": "shopify:\/\/collections\/all"
+          }
+        }
+      },
+      "block_order": [
+        "image_block_37J9AL",
+        "image_block_L8yawA",
+        "image_block_hAXEfP"
+      ],
+      "settings": {
+        "title": "Find out what the hype is about",
+        "sub-title": "Hover to Reveal"
+      }
+    },
+    "collection_list_amtCR7": {
+      "type": "collection-list",
+      "custom_css": [
+        "{background-color: #000; padding-top: 1px; padding-bottom: 1px;}",
+        "h2.hometitle {color: #fff; font-size: 50px; font-weight: 700;}",
+        ".text-overlay__title h2 {background-color: #000; display: inline; font-size: 12px; text-transform: inherit; padding: 5px 13px; border-radius: 20px; font-weight: 400; color: #fff;}",
+        "@media (max-width: 1200px) {h2.hometitle {font-size: 35px; }}",
+        "@media (max-width: 767px) {h2.hometitle {font-size: 27px; }}"
+      ],
+      "settings": {
+        "title": "Shop By Category",
+        "enable_carousel": true,
+        "grid": 3,
+        "color_scheme": "default",
+        "full_width": true,
+        "coll_grid_image_shape": "square",
+        "coll_grid_image_position": "center center",
+        "coll_thumb_mob_per_row": "1",
+        "coll_grid_show_count": false,
+        "coll_text_position": "over-full",
+        "coll_text_position_under_mobile": false,
+        "coll_thumb_text_align_x": "left",
+        "coll_thumb_text_align_y": "bottom",
+        "coll_button_style": "primary"
+      }
+    },
+    "countdown_timer_UDbYqX": {
+      "type": "countdown-timer",
+      "blocks": {
+        "heading_V8VCbb": {
+          "type": "heading",
+          "settings": {
+            "title": "Break",
+            "use_h1": false
+          }
+        },
+        "text_DWGwnN": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Entertainment at your fingertips. Enjoy Exciting moments, while pulling the Biggest cards in the hobby whenever wherever you are.<\/p>",
+            "enlarge_text": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_V8VCbb",
+        "text_DWGwnN"
+      ],
+      "custom_css": [
+        ".fully-padded-row--medium {background-color: #d9d9d9; padding: 0px;}",
+        ".container {padding: 0px;}",
+        ".img-fill-half-section,.img-fill-half-section img {position: relative; width: 100%; margin: 0px;}",
+        ".column {margin-bottom: 0px;}",
+        "h2 {color: #231f20; font-weight: 700; font-size: 60px;}",
+        "p {color: #231f20;}",
+        "@media (max-width: 1200px) {h2 {font-size: 45px; }}",
+        "@media (max-width: 767px) {.align-ltr-left {padding: 30px 15px !important; }}"
+      ],
+      "settings": {
+        "show_image": true,
+        "image": "shopify:\/\/shop_images\/img-5.png",
+        "image_link": "",
+        "show_image_space": false,
+        "image_position": "left",
+        "text_alignment": "left",
+        "color_scheme": "2"
+      }
+    }
+  },
+  "order": [
+    "slideshow_7mCnjh",
+    "scrolling_banner_RiFyx8",
+    "custom_section_2_aMtAni",
+    "collection_list_amtCR7",
+    "countdown_timer_UDbYqX"
+  ]
+}

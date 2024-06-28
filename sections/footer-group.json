@@ -1,1 +1,109 @@
-{"type":"footer","name":"Footer Group","sections":{"cross-page-promos":{"type":"cross-page-promos","blocks":{"icon_B3tbjf":{"type":"icon","settings":{"icon":"star","text":"CUSTOMER SUPPORT","link_url":""}},"1478526632862":{"type":"icon","settings":{"icon":"heart","text":"We love what we do.","link_url":""}},"1478526647261":{"type":"icon","settings":{"icon":"truck","text":"Fast Delivery","link_url":""}},"1478527611164":{"type":"icon","settings":{"icon":"check_mark_in_circle","text":"DISCOUNTS","link_url":""}}},"block_order":["icon_B3tbjf","1478526632862","1478526647261","1478527611164"],"disabled":true,"settings":{"cross_page_promo_bg":"#000000","cross_page_promo_color":"#ffffff","show_on_home_page":true}},"footer":{"type":"footer","blocks":{"1601308717434":{"type":"text","settings":{"title":"","text":"","image_width":70,"show_social_icons":false,"soc_icons_large":false,"enable_follow_on_shop":false}},"1601308656020":{"type":"newsletter","settings":{"title":"JOIN OUR MAILING LIST","text":"<p>Sign up for exclusive deals, drops, events and more.<\/p>","button_style":"primary","show_social_icons":false,"soc_icons_large":false}},"1601308671932":{"type":"menu","settings":{"title":"Quick links","menu":"footer"}}},"block_order":["1601308717434","1601308656020","1601308671932"],"settings":{"lower_menu":"","show_powered_by":false,"show_payment_icons":true,"enable_country_selector":true,"enable_language_selector":true}}},"order":["cross-page-promos","footer"]}
+{
+  "type": "footer",
+  "name": "Footer Group",
+  "sections": {
+    "cross-page-promos": {
+      "type": "cross-page-promos",
+      "blocks": {
+        "icon_B3tbjf": {
+          "type": "icon",
+          "settings": {
+            "icon": "star",
+            "text": "CUSTOMER SUPPORT",
+            "link_url": ""
+          }
+        },
+        "1478526632862": {
+          "type": "icon",
+          "settings": {
+            "icon": "heart",
+            "text": "We love what we do.",
+            "link_url": ""
+          }
+        },
+        "1478526647261": {
+          "type": "icon",
+          "settings": {
+            "icon": "truck",
+            "text": "Fast Delivery",
+            "link_url": ""
+          }
+        },
+        "1478527611164": {
+          "type": "icon",
+          "settings": {
+            "icon": "check_mark_in_circle",
+            "text": "DISCOUNTS",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "icon_B3tbjf",
+        "1478526632862",
+        "1478526647261",
+        "1478527611164"
+      ],
+      "disabled": true,
+      "settings": {
+        "cross_page_promo_bg": "#000000",
+        "cross_page_promo_color": "#ffffff",
+        "show_on_home_page": true
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "custom_liquid_6xnrre": {
+          "type": "custom-liquid",
+          "settings": {
+            "title": "",
+            "code": "<a href=\"\/\"><img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0636\/6049\/0891\/files\/Ballers_bank_logo_white_91916a36.png\"><\/a>"
+          }
+        },
+        "1601308671932": {
+          "type": "menu",
+          "settings": {
+            "title": "Company",
+            "menu": "footer"
+          }
+        },
+        "menu_XD843V": {
+          "type": "menu",
+          "settings": {
+            "title": "",
+            "menu": "footer-menu-2"
+          }
+        },
+        "1601308717434": {
+          "type": "text",
+          "settings": {
+            "title": "Follow Us",
+            "text": "",
+            "image_width": 70,
+            "show_social_icons": true,
+            "soc_icons_large": true,
+            "enable_follow_on_shop": false
+          }
+        }
+      },
+      "block_order": [
+        "custom_liquid_6xnrre",
+        "1601308671932",
+        "menu_XD843V",
+        "1601308717434"
+      ],
+      "settings": {
+        "lower_menu": "",
+        "show_powered_by": false,
+        "show_payment_icons": false,
+        "enable_country_selector": false,
+        "enable_language_selector": false
+      }
+    }
+  },
+  "order": [
+    "cross-page-promos",
+    "footer"
+  ]
+}

@@ -30,7 +30,7 @@
       <div data-merge="page-heading" {%- render 'animation-attrs', attrs: 'data-cc-animate' -%}>
         {%- if cart.items != empty -%}
           <div class="page-header">
-            <h1 class="majortitle">{{ 'cart.general.title' | t }}</h1>
+            <h1 class="cart majortitle">Basket <span>{{ cart.item_count }} items</span></h1>
           </div>
         {%- endif -%}
       </div>
@@ -46,7 +46,7 @@
       <div class="cart-item-list">
         <div class="cart-item-list__body" data-merge-list="cart-items">
           {% if cart.items != empty %}
-            <div data-merge-list-item="item-key:head">
+            <div data-merge-list-item="item-key:head" class="hidden">
               <div class="cart-item-list__head" aria-hidden="true" {%- render 'animation-attrs', attrs: 'data-cc-animate' -%}>
                 <div class="cart-item-list-heading cart-item-list-heading--product">{{ 'cart.items.product' | t }}</div>
                 <div class="cart-item-list-heading cart-item-list-heading--price">{{ 'cart.items.price' | t }}</div>
@@ -55,7 +55,7 @@
               </div>
             </div>
           {% else %}
-            <div data-merge-list-item="item-key:empty" >
+            <div data-merge-list-item="item-key:empty">
               <div class="fully-spaced-row--large align-centre" {%- render 'animation-attrs', attrs: 'data-cc-animate' -%}>
                 <div class="align-center">
                   {%- if section.settings.empty_icon == 'basket' -%}
@@ -96,10 +96,10 @@
         </div>
       </div>
 
-      <div {%- render 'animation-attrs', attrs: 'data-cc-animate' -%}>
+      <div class="cart__total" {%- render 'animation-attrs', attrs: 'data-cc-animate' -%}>
         <div class="checkout-subtotal-container spaced-row{% if cart.items == empty %} hidden{% endif %}" data-merge-attributes="subtotal-container">
           <div class="flexible-layout">
-            <div class="checkout-subtotal-container__left column column--half">
+            <div class="checkout-subtotal-container__left column column--half hidden">
               {% if section.settings.show_order_note %}
                 <cart-note class="cart-note block lightly-spaced-row">
                   <label class="block" for="note">{{ 'cart.note.label' | t }}</label>
@@ -117,7 +117,7 @@
               {% endif %}
             </div>
 
-            <div class="checkout-subtotal-container__right column column--half">
+            <div class="checkout-subtotal-container__right">
               <div data-merge="total">
                 {%- if cart.cart_level_discount_applications != blank -%}
                   <ul class="cart-discount-list">
@@ -133,16 +133,17 @@
                   </ul>
                 {%- endif -%}
 
-                <h2 class="subtotal h2">
-                  {{ 'cart.summary.subtotal' | t }}:
+                <h2>Cart Total</h2>
+                <h3 class="subtotal">
+                  <span>{{ 'cart.summary.subtotal' | t }}</span>
                   <span class="theme-money">
                     {%- if settings.cart_currency_code_enabled -%}
                       {{- cart.total_price | money_with_currency -}}
                     {%- else -%}
-                      {{- cart.total_price | money -}}
+                      {{- cart.items_subtotal_price | money -}}
                     {%- endif -%}
                   </span>
-                </h2>
+                </h3>
 
                 {%- if section.settings.show_tax_and_shipping -%}
                   <div class="cart-policies rte">
@@ -159,6 +160,17 @@
                 {%- endif -%}
               </div>
 
+              <h3 class="subtotal">
+                  <span>Total</span>
+                  <span class="theme-money">
+                    {%- if settings.cart_currency_code_enabled -%}
+                      {{- cart.total_price | money_with_currency -}}
+                    {%- else -%}
+                      {{- cart.total_price | money -}}
+                    {%- endif -%}
+                  </span>
+                </h3>
+
               {% if section.settings.cart_terms_page != blank %}
                 <terms-agreement class="terms-agreement rte">
                   <input type="checkbox" id="terms" />
@@ -172,7 +184,7 @@
                     <button type="submit" name="update">{{ 'cart.general.update' | t }}</button>
                   </span>
 
-                  <button type="submit" class="btn btn--large" id="update-cart" name="checkout">{{ 'cart.summary.checkout' | t }}</button>
+                  <button type="submit" class="btn btn--large" id="update-cart" name="checkout"><span>Continue to payment</span> <span><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z" style="fill: #fff;" /></svg></span></button>
 
                   {% if section.settings.show_additional_checkout_buttons and additional_checkout_buttons and section.settings.cart_terms_page == blank %}
                   <div class="additional-checkout-buttons">
@@ -186,6 +198,7 @@
                 {%- endif -%}
               </div>
             </div>
+            
           </div>
         </div>
       </div>
