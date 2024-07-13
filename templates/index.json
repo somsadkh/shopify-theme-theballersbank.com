@@ -10,8 +10,8 @@
             "subheading": "",
             "title": "Live Stream Products<br>Buy Now",
             "heading_max_width": 15,
-            "title_size": 60,
-            "title_size_mobile": 38,
+            "title_size": 50,
+            "title_size_mobile": 30,
             "use_h1": false,
             "text": "",
             "enlarge_text": true,
@@ -29,8 +29,8 @@
             "subheading": "",
             "title": "Live Stream Products<br>Buy Now",
             "heading_max_width": 15,
-            "title_size": 60,
-            "title_size_mobile": 38,
+            "title_size": 50,
+            "title_size_mobile": 30,
             "use_h1": false,
             "text": "",
             "enlarge_text": true,
@@ -46,9 +46,7 @@
         "image_FH384T",
         "image_w4nYUd"
       ],
-      "custom_css": [
-        "h2 {text-transform: initial; font-weight: 700;}"
-      ],
+      "custom_css": [],
       "settings": {
         "height": "adapt",
         "height_desktop": 600,
@@ -93,10 +91,7 @@
         "text_WYMhiQ",
         "text_carkqL"
       ],
-      "custom_css": [
-        "{background-color: #000;}",
-        "span.marquee-item.marquee-text {color: #fff;}"
-      ],
+      "custom_css": [],
       "settings": {
         "full_width": true,
         "color_scheme": "default",
@@ -130,12 +125,7 @@
         "heading_Gjb7xV",
         "text_ajwqyK"
       ],
-      "custom_css": [
-        "h2 {font-size: 50px; font-weight: 700; text-transform: none;}",
-        "p {color: #000;}",
-        "@media (max-width: 1200px) {h2 {font-size: 35px; }}",
-        "@media (max-width: 767px) {h2 {font-size: 27px; }}"
-      ],
+      "custom_css": [],
       "settings": {
         "height": "small",
         "text_alignment": "left",
@@ -197,14 +187,7 @@
         "text_block_KHMG3k",
         "text_block_RcHEwh"
       ],
-      "custom_css": [
-        ".fully-spaced-row--medium {margin: 1em 0;}",
-        ".flexible-layout {gap: 20px; margin: 0px;}",
-        ".column {background-color: #000; padding: 20px;}",
-        ".img-ar:before {display: none;}",
-        "img {width: auto; height: 37px; position: relative; margin: 0;}",
-        "h3.text-column__title {color: #fff; font-size: 25px; text-align: left; font-weight: 700; text-transform: none; padding-top: 2em;}"
-      ],
+      "custom_css": [],
       "settings": {
         "title": "",
         "media_aspect_ratio": "s",
@@ -254,13 +237,7 @@
     },
     "collection_list_amtCR7": {
       "type": "collection-list",
-      "custom_css": [
-        "{background-color: #000; padding-top: 1px; padding-bottom: 1px;}",
-        "h2.hometitle {color: #fff; font-size: 50px; font-weight: 700;}",
-        ".text-overlay__title h2 {background-color: #000; display: inline; font-size: 12px; text-transform: inherit; padding: 5px 13px; border-radius: 20px; font-weight: 400; color: #fff;}",
-        "@media (max-width: 1200px) {h2.hometitle {font-size: 35px; }}",
-        "@media (max-width: 767px) {h2.hometitle {font-size: 27px; }}"
-      ],
+      "custom_css": [],
       "settings": {
         "title": "Shop By Category",
         "enable_carousel": true,
@@ -300,16 +277,7 @@
         "heading_V8VCbb",
         "text_DWGwnN"
       ],
-      "custom_css": [
-        ".fully-padded-row--medium {background-color: #d9d9d9; padding: 0px;}",
-        ".container {padding: 0px;}",
-        ".img-fill-half-section,.img-fill-half-section img {position: relative; width: 100%; margin: 0px;}",
-        ".column {margin-bottom: 0px;}",
-        "h2 {color: #231f20; font-weight: 700; font-size: 60px;}",
-        "p {color: #231f20;}",
-        "@media (max-width: 1200px) {h2 {font-size: 45px; }}",
-        "@media (max-width: 767px) {.align-ltr-left {padding: 30px 15px !important; }}"
-      ],
+      "custom_css": [],
       "settings": {
         "show_image": true,
         "image": "shopify:\/\/shop_images\/img-5.png",

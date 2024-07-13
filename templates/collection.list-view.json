@@ -2,15 +2,14 @@
   "sections": {
     "custom_collection_header_4PiCLA": {
       "type": "custom-collection-header",
-      "settings": {
-        "custom_banner_image": "shopify:\/\/shop_images\/euclid_s_new_image_of_star-formi.jpg",
-        "title": "Find Your Next Break",
-        "content": "<p>Custom Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore<\/p>"
-      }
+      "settings": {}
     },
     "featured_collection_bfbWYx": {
       "type": "featured-collection",
-      "custom_css": [],
+      "custom_css": [
+        "h2 {font-weight: 700; text-transform: inherit; font-size: 35px; text-align: left;}",
+        "@media (max-width: 767px) {h2 {font-size: 27px; }}"
+      ],
       "settings": {
         "title": "Shop New Arrivals",
         "collection": "new-arrivals",
@@ -25,7 +24,11 @@
     },
     "main": {
       "type": "main-collection",
-      "custom_css": [],
+      "disabled": true,
+      "custom_css": [
+        "h1 {font-weight: 700; text-transform: inherit; font-size: 35px; text-align: left;}",
+        "@media (max-width: 767px) {h1 {font-size: 27px; }}"
+      ],
       "settings": {
         "show_title": false,
         "show_image_behind_heading": false,
@@ -50,13 +53,7 @@
         "sort_show_alpha": true,
         "sort_show_price": false,
         "sort_show_date": false,
-        "related_collections": [
-          "boxes",
-          "breaks",
-          "deals",
-          "packs",
-          "slab-house"
-        ],
+        "related_collections": [],
         "related_collections_style": "buttons",
         "rel_coll_gall_aspect_ratio": "1",
         "image_position": "center center",
@@ -64,6 +61,29 @@
         "rel_coll_gall_full_width": true,
         "rel_coll_gall_overlay_style": "shadow",
         "rel_coll_gall_text_alignment": "bottom left",
+        "rel_coll_grid_mobile": "1"
+      }
+    },
+    "main_collection_list_iAMn69": {
+      "type": "main-collection-list",
+      "settings": {
+        "coll_num_per_page_int": 16,
+        "grid": 4,
+        "show_vendor": false,
+        "show_total": false,
+        "button_grid_filter_name": "Size,Taille,Größe",
+        "auto_apply_hide_unavailable": false,
+        "enable_sticky_filter": false,
+        "show_sort": true,
+        "sort_show_alpha": true,
+        "sort_show_price": false,
+        "sort_show_date": false,
+        "rel_coll_gall_aspect_ratio": "1",
+        "image_position": "center center",
+        "rel_coll_gall_enable_margin": true,
+        "rel_coll_gall_full_width": false,
+        "rel_coll_gall_overlay_style": "shadow",
+        "rel_coll_gall_text_alignment": "center center",
         "rel_coll_grid_mobile": "1"
       }
     },
@@ -121,7 +141,12 @@
         "text_block_XWGPyV",
         "text_block_mLiqg8"
       ],
-      "custom_css": [],
+      "custom_css": [
+        ".fully-spaced-row--medium {background-color: #000; border-bottom: 1px solid #fff; margin: 0px; padding: 20px 0px 10px;}",
+        ".img-ar:before {display: none;}",
+        "img {width: auto; height: 25px; position: relative;}",
+        "h3.text-column__title {color: #fff; font-size: 17px; text-align: center; font-weight: 600;}"
+      ],
       "settings": {
         "title": "",
         "media_aspect_ratio": "s",
@@ -136,6 +161,7 @@
     "custom_collection_header_4PiCLA",
     "featured_collection_bfbWYx",
     "main",
+    "main_collection_list_iAMn69",
     "multi_column_JRe6kK"
   ]
 }

@@ -25,11 +25,12 @@
     endfor
   endif
 -%}
-
+  
+  
 {%- if related_collections_count > 0 -%}
   {% capture related_collection_html %}
     {% if section.settings.related_collections_style == 'buttons' %}
-      <div class="container{% if header_image_enabled %} container--not-mobile{% endif %} lightish-spaced-row-above">
+      <div class="container{% if header_image_enabled %} container--not-mobile{% endif %} lightish-spaced-row-above hidden">
         <related-collection-link-buttons class="related-collection-links related-collection-links--buttons align-center{% if header_image_enabled %} image-overlay__over{% endif %}" data-expander-btn-text="{{ 'sections.collection.view_all_related_collections' | t }}">
           {%- for loop_collection in section.settings.related_collections -%}
             {%- unless loop_collection.handle == collection.handle -%}
@@ -43,6 +44,7 @@
         <div class="container container--not-mobile lightish-spaced-row-above lightish-spaced-row-above--not-mobile{% if section.settings.rel_coll_grid_mobile == 'hide' %} desktop-only{% endif %}">
       {% endunless %}
       <div class="
+        hidden
         gallery
         gallery--height-adapt
         gallery--grid-desktop-{{ related_collections_count | at_most: 4 }}
@@ -123,6 +125,7 @@
   {% endcapture %}
 {%- endif -%}
 
+  
 {% if header_image_enabled %}
   {%- liquid
     assign show_header = false
@@ -179,7 +182,7 @@
         {%- endif -%}
 
         {% if collection.description != blank and section.settings.coll_desc_pos == 'above' %}
-          <div class="rte cf align-center reading-width">{{ collection.description }}</div>
+          <div class="rte hidden cf align-center reading-width">{{ collection.description }}</div>
         {% endif %}
       </div>
     </div>
@@ -190,8 +193,8 @@
     {{ related_collection_html }}
   {%- endif -%}
 
-  <div class="container{% if settings.use_fullwidth_layout %} container--no-max{% endif %}{% if show_header == false %} lightly-spaced-row-above{% endif %}">
-    <div class="utility-bar" data-ajax-container data-ajax-scroll-to>
+  <div class="mt-3 container{% if settings.use_fullwidth_layout %} container--no-max{% endif %}{% if show_header == false %} lightly-spaced-row-above{% endif %}">
+    <div class="utility-bar collection_heading" data-ajax-container data-ajax-scroll-to>
       <div class="utility-bar__left">
         {% if section.settings.show_sort or show_filters %}
           <a href="#" class="toggle-btn utility-bar__item{% if section.settings.collapse_tag_sidebar_by_default == false %} toggle-btn--revealed-desktop{% endif %}{% if show_filters == false %} mobile-only{% endif %}" data-toggle-filters>
@@ -214,6 +217,7 @@
             <span class="toggle-btn__chevron has-motion has-ltr-icon">{% render 'icon-chevron-right', stroke_width: 1.3 %}</span>
           </a>
         {% endif %}
+        <h1 class="pagetitle h3">{{ collection.title | escape }}</h1>
       </div>
 
       {% if section.settings.show_total and paginate.items > 0 %}
@@ -223,6 +227,7 @@
       {% endif %}
 
       <div class="utility-bar__right">
+        
         {% if section.settings.show_sort %}
           <span class="utility-bar__item desktop-only">
             <link-dropdown class="link-dropdown link-dropdown--right-aligned">
@@ -231,7 +236,13 @@
                 <span class="link-dropdown__button-text">
                   {%- for option in collection.sort_options -%}
                     {%- if current_sort == option.value -%}
-                      {{ option.name | escape }}
+                      {% if current_sort == 'title-ascending' %}
+                        {{ 'A-Z' | escape }}
+                      {% elsif current_sort == 'title-descending' %}
+                        {{ 'Z-A' | escape }}
+                      {% else %}
+                        {{ option.name | escape }}
+                      {% endif %}
                       {%- break -%}
                     {%- endif -%}
                   {%- endfor -%}
@@ -266,19 +277,40 @@
                       continue
                     endif
                   -%}
-                  <a href="{{ request.path | sort_by: option.value | escape }}" class="link-dropdown__link{% if current_sort == option.value %} link-dropdown__link--active{% endif %}">{{ option.name | escape }}</a>
+                  <a href="{{ request.path | sort_by: option.value | escape }}" class="link-dropdown__link{% if current_sort == option.value %} link-dropdown__link--active{% endif %}">
+                    {% if option.value == 'title-ascending' %}
+                      {{ 'A-Z' | escape }}
+                    {% elsif option.value == 'title-descending' %}
+                      {{ 'Z-A' | escape }}
+                    {% else %}
+                      {{ option.name | escape }}
+                    {% endif %}
+                  </a>
                 {%- endfor -%}
               </div>
             </link-dropdown>
           </span>
         {% endif %}
-        <span class="utility-bar__item mobile-only">
+        <button id="default--button" class="layout_changes"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M14 5.6C14 5.03995 14 4.75992 14.109 4.54601C14.2049 4.35785 14.3578 4.20487 14.546 4.10899C14.7599 4 15.0399 4 15.6 4H18.4C18.9601 4 19.2401 4 19.454 4.10899C19.6422 4.20487 19.7951 4.35785 19.891 4.54601C20 4.75992 20 5.03995 20 5.6V8.4C20 8.96005 20 9.24008 19.891 9.45399C19.7951 9.64215 19.6422 9.79513 19.454 9.89101C19.2401 10 18.9601 10 18.4 10H15.6C15.0399 10 14.7599 10 14.546 9.89101C14.3578 9.79513 14.2049 9.64215 14.109 9.45399C14 9.24008 14 8.96005 14 8.4V5.6Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M4 5.6C4 5.03995 4 4.75992 4.10899 4.54601C4.20487 4.35785 4.35785 4.20487 4.54601 4.10899C4.75992 4 5.03995 4 5.6 4H8.4C8.96005 4 9.24008 4 9.45399 4.10899C9.64215 4.20487 9.79513 4.35785 9.89101 4.54601C10 4.75992 10 5.03995 10 5.6V8.4C10 8.96005 10 9.24008 9.89101 9.45399C9.79513 9.64215 9.64215 9.79513 9.45399 9.89101C9.24008 10 8.96005 10 8.4 10H5.6C5.03995 10 4.75992 10 4.54601 9.89101C4.35785 9.79513 4.20487 9.64215 4.10899 9.45399C4 9.24008 4 8.96005 4 8.4V5.6Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M4 15.6C4 15.0399 4 14.7599 4.10899 14.546C4.20487 14.3578 4.35785 14.2049 4.54601 14.109C4.75992 14 5.03995 14 5.6 14H8.4C8.96005 14 9.24008 14 9.45399 14.109C9.64215 14.2049 9.79513 14.3578 9.89101 14.546C10 14.7599 10 15.0399 10 15.6V18.4C10 18.9601 10 19.2401 9.89101 19.454C9.79513 19.6422 9.64215 19.7951 9.45399 19.891C9.24008 20 8.96005 20 8.4 20H5.6C5.03995 20 4.75992 20 4.54601 19.891C4.35785 19.7951 4.20487 19.6422 4.10899 19.454C4 19.2401 4 18.9601 4 18.4V15.6Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M14 15.6C14 15.0399 14 14.7599 14.109 14.546C14.2049 14.3578 14.3578 14.2049 14.546 14.109C14.7599 14 15.0399 14 15.6 14H18.4C18.9601 14 19.2401 14 19.454 14.109C19.6422 14.2049 19.7951 14.3578 19.891 14.546C20 14.7599 20 15.0399 20 15.6V18.4C20 18.9601 20 19.2401 19.891 19.454C19.7951 19.6422 19.6422 19.7951 19.454 19.891C19.2401 20 18.9601 20 18.4 20H15.6C15.0399 20 14.7599 20 14.546 19.891C14.3578 19.7951 14.2049 19.6422 14.109 19.454C14 19.2401 14 18.9601 14 18.4V15.6Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></button>
+        <button id="listview--button" class="layout_changes"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M8 6L21 6.00078M8 12L21 12.0008M8 18L21 18.0007M3 6.5H4V5.5H3V6.5ZM3 12.5H4V11.5H3V12.5ZM3 18.5H4V17.5H3V18.5Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></button>
+        <span class="utility-bar__item mobile-only hidden">
           <div class="layout-switchers">
             <a class="layout-switch layout-switch--two-columns{% if settings.prod_thumb_mob_per_row == '2' %} layout-switch--active{% endif %}" href="#" aria-label="{{ 'sections.collection.grid_layout' | t }}">{%- render 'icon-grid', stroke_width: 1.3 -%}</a>
             <a class="layout-switch layout-switch--one-column{% if settings.prod_thumb_mob_per_row == '1' %} layout-switch--active{% endif %}" href="#" aria-label="{{ 'sections.collection.list_layout' | t }}">{%- render 'icon-box', stroke_width: 1.3 -%}</a>
           </div>
         </span>
       </div>
+    </div>
+    
+    <div class="collections_list">
+   
+    {%- for loop_collection in section.settings.related_collections -%}
+      {%- unless loop_collection.handle == collection.handle -%}
+        <div class="list-item">
+          <a href="{{ loop_collection.url }}">{{ loop_collection.title | escape }}</a>
+        </div>
+      {%- endunless -%}
+    {%- endfor -%}
     </div>
 
     <filter-container class="filter-container filter-container--side{% if section.settings.collapse_tag_sidebar_by_default == false %} filter-container--show-filters-desktop{% endif %}" data-ajax-filtering="{{ settings.ajax_products }}" data-filter-section-id="{{ section.id }}">
@@ -290,7 +322,7 @@
         {% if collection.products.size == 0 %}
           <h5 class="align-centre fully-spaced-row">{{ 'sections.collection.empty' | t }}</h5>
         {% else %}
-          <div class="product-grid product-grid--per-row-{{ section.settings.grid }} product-grid--per-row-mob-{{ settings.prod_thumb_mob_per_row }} product-grid--per-row-mob-{{ settings.prod_thumb_mob_per_row }}">
+          <div id="product-grid-swicher" class="product-grid product-grid--per-row-{{ section.settings.grid }} product-grid--per-row-mob-{{ settings.prod_thumb_mob_per_row }} product-grid--per-row-mob-{{ settings.prod_thumb_mob_per_row }}">
             {%- liquid
               if settings.prod_thumb_shape == 'portrait-23'
                 assign chosen_aspect_ratio = 0.67
@@ -335,13 +367,61 @@
   <div class="container pagination-row" data-ajax-container>{% render 'pagination-control', paginate: paginate %}</div>
 
   {% endpaginate %}
-
+  
   {% if collection.description != blank and section.settings.coll_desc_pos == 'below' %}
     <div class="container container--reading-width fully-spaced-row" {%- render 'animation-attrs', attrs: 'data-cc-animate' -%}>
       <div class="rte cf">{{ collection.description }}</div>
     </div>
   {% endif %}
 </div>
+<style>
+  .list-view {
+    display: block;
+  }
+  .list-view .block-inner {
+    margin-bottom: 1em;
+  }
+  .list-view .block-inner-inner {
+    display: flex !important;
+    align-items: center;
+  }
+  .list-view .image-cont {
+    width: 30%;
+  }
+  .list-view .product-block__detail {
+    width: 70%;
+  }
+
+  @media (max-width: 767px) {
+    .list-view .block-inner-inner {
+      flex-direction: column;
+    }
+    .list-view .image-cont {
+      width: 100%;
+    }
+    .list-view .product-block__detail {
+      width: 100%;
+    }
+  }
+</style>
+
+<script>
+  let element = document.getElementById('product-grid-swicher');
+  let currentViewMode = localStorage.getItem('viewMode');
+  if (currentViewMode == 'list-view') {
+    element.classList.add('list-view');
+  }
+  
+  document.getElementById('default--button').addEventListener('click', function() {
+    localStorage.setItem('viewMode', '');
+    element.classList.remove('list-view');
+  });
+  
+  document.getElementById('listview--button').addEventListener('click', function() {
+    localStorage.setItem('viewMode', 'list-view');
+    element.classList.add('list-view');
+  });
+</script>
 
 
 {% schema %}

@@ -38,9 +38,9 @@
     {%- endif %}
     <span class="price__current">
       {%- if show_currency_code -%}
-        {{ price | money_with_currency }}
+        {{ price | money_with_currency }} / each
       {%- else -%}
-        {{ price | money }}
+        {{ price | money }} / each
       {%- endif -%}
     </span>
     {% if for_variant_picker or compare_at_price > price -%}

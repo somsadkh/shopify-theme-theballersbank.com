@@ -1,0 +1,465 @@
+<style>
+  .utility-bar.collection_heading {
+    padding-top: 5em;
+  }
+</style>
+<div data-section-id="{{ section.id }}" {%- render 'animation-attrs', attrs: 'data-cc-animate' -%}>
+{% paginate collection.products by section.settings.coll_num_per_page_int %}
+
+
+  <div class="container{% if settings.use_fullwidth_layout %} container--no-max{% endif %}{% if show_header == false %} lightly-spaced-row-above{% endif %}">
+    <div class="utility-bar collection_heading" data-ajax-container data-ajax-scroll-to>
+      <div class="utility-bar__left">
+        <h1 class="pagetitle h3">{{ collection.title | escape }}</h1>
+      </div>
+
+      <div class="utility-bar__right">
+        
+        {% if section.settings.show_sort %}
+          <span class="utility-bar__item desktop-only">
+            <link-dropdown class="link-dropdown link-dropdown--right-aligned">
+              <div class="visually-hidden" id="sort-dropdown-heading">{{ 'products.sorting.sort_by_label' | t | escape }}</div>
+              <button class="link-dropdown__button has-motion" aria-expanded="false" aria-controls="sort-dropdown-options" aria-describedby="sort-dropdown-heading">
+                <span class="link-dropdown__button-text">
+                  {%- for option in collection.sort_options -%}
+                    {%- if current_sort == option.value -%}
+                      {% if current_sort == 'title-ascending' %}
+                        {{ 'A-Z' | escape }}
+                      {% elsif current_sort == 'title-descending' %}
+                        {{ 'Z-A' | escape }}
+                      {% else %}
+                        {{ option.name | escape }}
+                      {% endif %}
+                      {%- break -%}
+                    {%- endif -%}
+                  {%- endfor -%}
+                </span>
+                <span class="link-dropdown__button-icon has-motion">{% render 'icon-chevron-down', stroke_width: 1.3 %}</span>
+              </button>
+              <div class="link-dropdown__options" id="sort-dropdown-options">
+                {%- for option in collection.sort_options -%}
+                  {%- liquid
+                    if section.settings.sort_show_featured == false and option.value == 'manual' and collection.default_sort_by != 'manual'
+                      continue
+                    endif
+                    if section.settings.sort_show_best == false and option.value == 'best-selling' and collection.default_sort_by != 'best-selling'
+                      continue
+                    endif
+                    if section.settings.sort_show_alpha == false and option.value == 'title-ascending' and collection.default_sort_by != 'title-ascending'
+                      continue
+                    endif
+                    if section.settings.sort_show_alpha == false and option.value == 'title-descending' and collection.default_sort_by != 'title-descending'
+                      continue
+                    endif
+                    if section.settings.sort_show_price == false and option.value == 'price-ascending' and collection.default_sort_by != 'price-ascending'
+                      continue
+                    endif
+                    if section.settings.sort_show_price == false and option.value == 'price-descending' and collection.default_sort_by != 'price-descending'
+                      continue
+                    endif
+                    if section.settings.sort_show_date == false and option.value == 'created-ascending' and collection.default_sort_by != 'created-ascending'
+                      continue
+                    endif
+                    if section.settings.sort_show_date == false and option.value == 'created-descending' and collection.default_sort_by != 'created-descending'
+                      continue
+                    endif
+                  -%}
+                  <a href="{{ request.path | sort_by: option.value | escape }}" class="link-dropdown__link{% if current_sort == option.value %} link-dropdown__link--active{% endif %}">
+                    {% if option.value == 'title-ascending' %}
+                      {{ 'A-Z' | escape }}
+                    {% elsif option.value == 'title-descending' %}
+                      {{ 'Z-A' | escape }}
+                    {% else %}
+                      {{ option.name | escape }}
+                    {% endif %}
+                  </a>
+                {%- endfor -%}
+              </div>
+            </link-dropdown>
+          </span>
+        {% endif %}
+        <button id="default--button" class="layout_changes"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M14 5.6C14 5.03995 14 4.75992 14.109 4.54601C14.2049 4.35785 14.3578 4.20487 14.546 4.10899C14.7599 4 15.0399 4 15.6 4H18.4C18.9601 4 19.2401 4 19.454 4.10899C19.6422 4.20487 19.7951 4.35785 19.891 4.54601C20 4.75992 20 5.03995 20 5.6V8.4C20 8.96005 20 9.24008 19.891 9.45399C19.7951 9.64215 19.6422 9.79513 19.454 9.89101C19.2401 10 18.9601 10 18.4 10H15.6C15.0399 10 14.7599 10 14.546 9.89101C14.3578 9.79513 14.2049 9.64215 14.109 9.45399C14 9.24008 14 8.96005 14 8.4V5.6Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M4 5.6C4 5.03995 4 4.75992 4.10899 4.54601C4.20487 4.35785 4.35785 4.20487 4.54601 4.10899C4.75992 4 5.03995 4 5.6 4H8.4C8.96005 4 9.24008 4 9.45399 4.10899C9.64215 4.20487 9.79513 4.35785 9.89101 4.54601C10 4.75992 10 5.03995 10 5.6V8.4C10 8.96005 10 9.24008 9.89101 9.45399C9.79513 9.64215 9.64215 9.79513 9.45399 9.89101C9.24008 10 8.96005 10 8.4 10H5.6C5.03995 10 4.75992 10 4.54601 9.89101C4.35785 9.79513 4.20487 9.64215 4.10899 9.45399C4 9.24008 4 8.96005 4 8.4V5.6Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M4 15.6C4 15.0399 4 14.7599 4.10899 14.546C4.20487 14.3578 4.35785 14.2049 4.54601 14.109C4.75992 14 5.03995 14 5.6 14H8.4C8.96005 14 9.24008 14 9.45399 14.109C9.64215 14.2049 9.79513 14.3578 9.89101 14.546C10 14.7599 10 15.0399 10 15.6V18.4C10 18.9601 10 19.2401 9.89101 19.454C9.79513 19.6422 9.64215 19.7951 9.45399 19.891C9.24008 20 8.96005 20 8.4 20H5.6C5.03995 20 4.75992 20 4.54601 19.891C4.35785 19.7951 4.20487 19.6422 4.10899 19.454C4 19.2401 4 18.9601 4 18.4V15.6Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M14 15.6C14 15.0399 14 14.7599 14.109 14.546C14.2049 14.3578 14.3578 14.2049 14.546 14.109C14.7599 14 15.0399 14 15.6 14H18.4C18.9601 14 19.2401 14 19.454 14.109C19.6422 14.2049 19.7951 14.3578 19.891 14.546C20 14.7599 20 15.0399 20 15.6V18.4C20 18.9601 20 19.2401 19.891 19.454C19.7951 19.6422 19.6422 19.7951 19.454 19.891C19.2401 20 18.9601 20 18.4 20H15.6C15.0399 20 14.7599 20 14.546 19.891C14.3578 19.7951 14.2049 19.6422 14.109 19.454C14 19.2401 14 18.9601 14 18.4V15.6Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></button>
+        <button id="listview--button" class="layout_changes"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M8 6L21 6.00078M8 12L21 12.0008M8 18L21 18.0007M3 6.5H4V5.5H3V6.5ZM3 12.5H4V11.5H3V12.5ZM3 18.5H4V17.5H3V18.5Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></button>
+        <span class="utility-bar__item mobile-only hidden">
+          <div class="layout-switchers">
+            <a class="layout-switch layout-switch--two-columns{% if settings.prod_thumb_mob_per_row == '2' %} layout-switch--active{% endif %}" href="#" aria-label="{{ 'sections.collection.grid_layout' | t }}">{%- render 'icon-grid', stroke_width: 1.3 -%}</a>
+            <a class="layout-switch layout-switch--one-column{% if settings.prod_thumb_mob_per_row == '1' %} layout-switch--active{% endif %}" href="#" aria-label="{{ 'sections.collection.list_layout' | t }}">{%- render 'icon-box', stroke_width: 1.3 -%}</a>
+          </div>
+        </span>
+      </div>
+    </div>
+    
+    <div class="collections_list">
+    {% for collection in collections %}
+      <div class="list-item">
+        <a href="{{ collection.url }}/?view=list-view">{{ collection.title }}</a>
+      </div>
+    {% endfor %}
+    </div>
+
+    <filter-container class="filter-container filter-container--side{% if section.settings.collapse_tag_sidebar_by_default == false %} filter-container--show-filters-desktop{% endif %}" data-ajax-filtering="{{ settings.ajax_products }}" data-filter-section-id="{{ section.id }}">
+      {% if section.settings.show_sort or show_filters %}
+        {% render 'faceted-filters', filter_context: collection, clear_url: collection.url, current_sort: current_sort %}
+      {% endif %}
+
+      <div class="filters-adjacent collection-listing" data-ajax-container>
+        {% if collection.products.size == 0 %}
+          <h5 class="align-centre fully-spaced-row">{{ 'sections.collection.empty' | t }}</h5>
+        {% else %}
+          <div class="product-lists">
+            {%- liquid
+              if settings.prod_thumb_shape == 'portrait-23'
+                assign chosen_aspect_ratio = 0.67
+              elsif settings.prod_thumb_shape == 'portrait-45'
+                assign chosen_aspect_ratio = 0.8
+              elsif settings.prod_thumb_shape == 'square'
+                assign chosen_aspect_ratio = 1.0
+              elsif settings.prod_thumb_shape == 'landscape-54'
+                assign chosen_aspect_ratio = 1.25
+              elsif settings.prod_thumb_shape == 'landscape-32'
+                assign chosen_aspect_ratio = 1.50
+              elsif settings.prod_thumb_shape == 'tallest'
+                assign chosen_aspect_ratio = 99
+                for product in collection.products
+                  if product.featured_media.preview_image.aspect_ratio < chosen_aspect_ratio
+                    assign chosen_aspect_ratio = product.featured_media.preview_image.aspect_ratio
+                  endif
+                endfor
+              else
+                assign chosen_aspect_ratio = 0
+                for product in collection.products
+                  if product.featured_media.preview_image.aspect_ratio > chosen_aspect_ratio
+                    assign chosen_aspect_ratio = product.featured_media.preview_image.aspect_ratio
+                  endif
+                endfor
+              endif
+
+              for product in collection.products
+                assign prioritised_loading = false
+                if forloop.index0 < section.settings.grid
+                  assign prioritised_loading = true
+                endif
+                render 'product-listview', product: product, custom_aspect_ratio: chosen_aspect_ratio, animate: true, prioritised_loading: prioritised_loading
+              endfor
+            -%}
+          </div>
+        {% endif %}
+      </div>
+    </filter-container>
+  </div>
+
+  <div class="container pagination-row" data-ajax-container>{% render 'pagination-control', paginate: paginate %}</div>
+
+  {% endpaginate %}
+</div>
+
+<script>
+  document.getElementById('default--button').addEventListener('click', function() {
+      var currentUrl = window.location.href;
+      var newUrl = removeQueryStringParameter(currentUrl, 'view');
+      window.location.href = newUrl;
+  });
+  
+  document.getElementById('listview--button').addEventListener('click', function() {
+      var currentUrl = window.location.href;
+      var newUrl = updateQueryStringParameter(currentUrl, 'view', 'list-view');
+      window.location.href = newUrl;
+  });
+  
+  function updateQueryStringParameter(uri, key, value) {
+      var re = new RegExp("([?&])" + key + "=.*?(&|$)", "i");
+      var separator = uri.indexOf('?') !== -1 ? "&" : "?";
+      localStorage.setItem('viewMode', 'list-view');
+      if (uri.match(re)) {
+          return uri.replace(re, '$1' + key + "=" + value + '$2');
+      }
+      else {
+          return uri + separator + key + "=" + value;
+      }
+  }
+
+  function removeQueryStringParameter(uri, key) {
+      var re = new RegExp("([?&])" + key + "=.*?(&|$)", "i");
+      var separator = uri.indexOf('?') !== -1 ? "&" : "?";
+      localStorage.setItem('viewMode', '');
+      if (uri.match(re)) {
+          var result = uri.replace(re, '$2');
+          if (result.charAt(result.length - 1) === '?') {
+              result = result.slice(0, -1);
+          }
+          return result;
+      }
+      else {
+          return uri;
+      }
+  }
+</script>
+
+
+{% schema %}
+{
+  "name": "Collection List pages",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "coll_num_per_page_int",
+      "min": 16,
+      "max": 50,
+      "step": 2,
+      "label": "Number of products to show per page",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "grid",
+      "label": "Products per row",
+      "min": 2,
+      "max": 5,
+      "step": 1,
+      "default": 4
+    },
+    {
+      "type": "checkbox",
+      "id": "show_vendor",
+      "label": "Show product vendors",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_total",
+      "label": "Show product total",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "button_grid_filter_name",
+      "label": "Filters to show as buttons",
+      "info": "Counts will not show. Separate options with a comma. E.g. Size,Taille,Größe",
+      "default": "Size,Taille,Größe"
+    },
+    {
+      "type": "checkbox",
+      "id": "auto_apply_hide_unavailable",
+      "label": "On selecting a filter, automatically apply 'Hide out of stock'",
+      "default": false,
+      "info": "Requires Availability filter to be enabled"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sticky_filter",
+      "label": "Enable sticky filter column",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Sorting"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_sort",
+      "label": "Show sorting dropdown",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "sort_show_alpha",
+      "label": "Enable order: Alphabetical",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "sort_show_price",
+      "label": "Enable order: Price",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "sort_show_date",
+      "label": "Enable order: Date added",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "rel_coll_gall_aspect_ratio",
+      "label": "Image shape",
+      "default": "1",
+      "options": [
+        {
+          "value": "2",
+          "label": "Landscape (2x1)"
+        },
+        {
+          "value": "1.5",
+          "label": "Landscape (6x4)"
+        },
+        {
+          "value": "1.25",
+          "label": "Landscape (5x4)"
+        },
+        {
+          "value": "1",
+          "label": "Square (1x1)"
+        },
+        {
+          "value": "0.8",
+          "label": "Portrait (4x5)"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image alignment",
+      "info": "Used to keep the subject of your image in view",
+      "default": "center center",
+      "options": [
+        {
+          "value": "top left",
+          "label": "Top left"
+        },
+        {
+          "value": "top center",
+          "label": "Top center"
+        },
+        {
+          "value": "top right",
+          "label": "Top right"
+        },
+        {
+          "value": "center left",
+          "label": "Middle left"
+        },
+        {
+          "value": "center center",
+          "label": "Middle center"
+        },
+        {
+          "value": "center right",
+          "label": "Middle right"
+        },
+        {
+          "value": "bottom left",
+          "label": "Bottom left"
+        },
+        {
+          "value": "bottom center",
+          "label": "Bottom center"
+        },
+        {
+          "value": "bottom right",
+          "label": "Bottom right"
+        }
+      ]
+    },
+    {
+      "id": "rel_coll_gall_enable_margin",
+      "type": "checkbox",
+      "label": "Add spacing around images",
+      "default": true
+    },
+    {
+      "id": "rel_coll_gall_full_width",
+      "type": "checkbox",
+      "label": "Full page width",
+      "default": false
+    },
+    {
+      "id": "rel_coll_gall_overlay_style",
+      "type": "select",
+      "label": "Overlay style",
+      "default": "shadow",
+      "options": [
+        {
+          "value": "full",
+          "label": "Tint"
+        },
+        {
+          "value": "box",
+          "label": "Box"
+        },
+        {
+          "value": "shadow",
+          "label": "Text shadow"
+        },
+        {
+          "value": "full image-overlay--bg-shadow",
+          "label": "Text shadow and tint"
+        },
+        {
+          "value": "no_background",
+          "label": "No background"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "rel_coll_gall_text_alignment",
+      "label": "Text overlay position",
+      "options": [
+        {
+          "value": "top left",
+          "label": "Top left"
+        },
+        {
+          "value": "top center",
+          "label": "Top center"
+        },
+        {
+          "value": "top right",
+          "label": "Top right"
+        },
+        {
+          "value": "center center",
+          "label": "Middle"
+        },
+        {
+          "value": "bottom left",
+          "label": "Bottom left"
+        },
+        {
+          "value": "bottom center",
+          "label": "Bottom center"
+        },
+        {
+          "value": "bottom right",
+          "label": "Bottom right"
+        }
+      ],
+      "default": "center center"
+    },
+    {
+      "type": "select",
+      "id": "rel_coll_grid_mobile",
+      "label": "Images per row - mobile",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "hide",
+          "label": "Hide"
+        }
+      ],
+      "default": "2"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection List Page"
+    }
+  ]
+}
+{% endschema %}

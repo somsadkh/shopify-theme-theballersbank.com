@@ -1,0 +1,59 @@
+<div class="page-header page-header--with-background img-fill image-overlay image-overlay--bg-shadow  page-header--padded-large">
+  <div class="image-overlay__image">
+    {% if collection.image != blank %}
+    {%- render 'image' with collection.image, loading: 'eager', fetchpriority: 'high' -%}
+    {% else %}
+      {%- render 'image' with section.settings.custom_banner_image, loading: 'eager', fetchpriority: 'high' -%}
+    {% endif %}
+  </div>
+  <div class="text-overlay text-overlay--inline text-overlay--v-center text-overlay--h-center image-overlay__over" data-cc-animate data-cc-animate-delay="0.2s" style="animation-delay: 0.2s;">
+    <div class="text-overlay__inner">
+      <div class="text-overlay__text">
+        <h1 class="text-overlay__title super-large-text">
+          {% if collection.title != 'Products' %}
+            {{ collection.title | escape }}
+          {% else %}
+            {{ section.settings.title }}
+          {% endif %}
+        </h1>
+        <div class="text-overlay__rte rte cf align-center reading-width large-text">
+          {% if collection.description != blank %}
+            {{ collection.description }}
+          {% else %}
+            {{ section.settings.content }}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Collection Header",
+  "class": "collection-header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "custom_banner_image",
+      "label": "Callback Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Content"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Header"
+    }
+  ]
+}
+
+{% endschema %}
