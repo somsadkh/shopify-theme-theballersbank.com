@@ -1,13 +1,21 @@
+/* Global */
 h1, h2 {
   font-size: 50px !important;
 }
 .navigation__item a {
     text-transform: uppercase;
 }
+
+/* Header */
+img.logo__image{
+  max-height: 70px;
+  width: auto;
+}
+.logo img{
+  max-height: 65px !important;
+  width: auto !important;
+}
 a.cart-link {
-    background-color: #fff;
-    color: #000;
-    padding: 7px 17px;
     border-radius: 20px;
     font-weight: 700;
 }

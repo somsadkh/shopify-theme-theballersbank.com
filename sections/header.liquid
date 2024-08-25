@@ -136,6 +136,34 @@
               {%- endif -%}
             </a>
 
+            <a class="logo__link" href="{{ section.settings.link_url_logo_2 }}" title="{{ shop.name }}">
+              {%- if section.settings.logo-2 != blank -%}
+                {%- assign logo_width_x2 = section.settings.logo_img_width_int | times: 2 -%}
+                <img class="logo__image" src="{{ section.settings.logo-2 | image_url: width: logo_width_x2 }}" alt="{{ section.settings.logo-2.alt | default: shop.name | escape }}" itemprop="logo" width="{{ section.settings.logo.width }}" height="{{ section.settings.logo.height }}" loading="eager" />
+
+                {%- if section.settings.enable_transparent and template.name == 'index' and section.settings.transparent_logo != blank -%}
+                  <img class="logo__image-transparent" src="{{ section.settings.transparent_logo | image_url: width: logo_width_x2 }}" alt="{{ section.settings.transparent_logo.alt | escape }}" width="{{ section.settings.transparent_logo.width }}" height="{{ section.settings.transparent_logo.height }}" aria-hidden="true" loading="eager" />
+                {%- endif -%}
+
+              {%- else -%}
+                <span class="logotext">{{ shop.name }}</span>
+              {%- endif -%}
+            </a>
+
+            <a class="logo__link" href="{{ section.settings.link_url_logo_3 }}" title="{{ shop.name }}">
+              {%- if section.settings.logo-3 != blank -%}
+                {%- assign logo_width_x2 = section.settings.logo_img_width_int | times: 2 -%}
+                <img class="logo__image" src="{{ section.settings.logo-3 | image_url: width: logo_width_x2 }}" alt="{{ section.settings.logo-3.alt | default: shop.name | escape }}" itemprop="logo" width="{{ section.settings.logo.width }}" height="{{ section.settings.logo.height }}" loading="eager" />
+
+                {%- if section.settings.enable_transparent and template.name == 'index' and section.settings.transparent_logo != blank -%}
+                  <img class="logo__image-transparent" src="{{ section.settings.transparent_logo | image_url: width: logo_width_x2 }}" alt="{{ section.settings.transparent_logo.alt | escape }}" width="{{ section.settings.transparent_logo.width }}" height="{{ section.settings.transparent_logo.height }}" aria-hidden="true" loading="eager" />
+                {%- endif -%}
+
+              {%- else -%}
+                <span class="logotext">{{ shop.name }}</span>
+              {%- endif -%}
+            </a>
+
             {%- if request.page_type == 'index' and section.settings.logo_h1 -%}
               </h1>
             {%- endif -%}
@@ -444,6 +472,28 @@
       "id": "logo",
       "label": "Logo",
       "info": "520 x 200px (recommended)"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo-2",
+      "label": "Logo-2",
+      "info": "520 x 200px (recommended)"
+    },
+    {
+      "type": "url",
+      "id": "link_url_logo_2",
+      "label": "Logo 2 URL"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo-3",
+      "label": "Logo-3",
+      "info": "520 x 200px (recommended)"
+    },
+    {
+      "type": "url",
+      "id": "link_url_logo_3",
+      "label": "Logo 3 URL"
     },
     {
       "type": "range",
